@@ -1,0 +1,120 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KrishiGPT</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button id="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+      <aside class="sidebar">
+        <div class="logo">KrishiGPT</div>
+        <nav>
+          <ul>
+            <li>Explore GPTs</li>
+            <li class="section-title">Today</li>
+            <li>Krishiverse AI Farming Solutions</li>
+            <li class="section-title">Yesterday</li>
+            <li>About Neer</li>
+            <li class="section-title">Previous 7 Days</li>
+            <li>How to make Neer in 30 mins</li>
+            <li></li>
+            <li>Calculated Columns vs DAX Mea...</li>
+            <li class="section-title">Previous 30 Days</li>
+            <li>how neer works</li>
+            <li>how to observe water moisture using Dhara</li>
+          </ul>
+        </nav>
+        <div class="upgrade-plan">
+          <h3>Settings</h3>
+          <!-- <p>Get GPT-4, DALL·E, and more</p> -->
+<!-- </div>
+      </aside>
+      <main>
+        <div class="main-content">
+          <div class="logo-container">
+            <div class="main-logo"></div>
+          </div>
+          <div class="suggestion-grid">
+            <div class="suggestion-item">
+              <span class="icon">🎓</span>
+              <p>Study vocabulary</p>
+            </div>
+            <div class="suggestion-item">
+              <span class="icon">✉️</span>
+              <p>Text inviting friend to wedding</p>
+            </div>
+            <div class="suggestion-item">
+              <span class="icon">🌆</span>
+              <p>Experience Seoul like a local</p>
+            </div>
+            <div class="suggestion-item">
+              <span class="icon">👥</span>
+              <p>Activities to make friends in new city</p>
+            </div>
+          </div>
+        </div>
+        <div class="input-container">
+          <input type="text" id="user-input" placeholder="Message KrishiGPT" />
+          <button class="send-button" id="send-button1">Send</button>
+        </div>
+        <div class="profile">
+          <img
+            src="data:image/png;base64,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    "
+            alt="Profile"
+            class="profile-img"
+          />
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html> -->
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KrishiGPT</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button id="sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+      <aside class="sidebar">
+        <div class="logo">KrishiGPT</div>
+        <nav>
+          <ul>
+            <!-- Sidebar content -->
+          </ul>
+        </nav>
+        <div class="upgrade-plan">
+          <h3>Settings</h3>
+        </div>
+      </aside>
+      <main>
+        <div class="main-content">
+          <div class="logo-container">
+            <div class="main-logo"></div>
+          </div>
+          <div class="message-container" id="message-container">
+            <!-- Messages will appear here -->
+          </div>
+          <div class="input-container">
+            <input
+              type="text"
+              id="user-input"
+              placeholder="Message KrishiGPT"
+            />
+            <button class="send-button" id="send-button1">Send</button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
