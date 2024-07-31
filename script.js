@@ -16,7 +16,8 @@ const sendButtonClickHandler = () => {
   // loader
   const assistantMessage = document.createElement("div");
   assistantMessage.classList.add("message", "assistant-message");
-  assistantMessage.textContent = "🤔...";
+  assistantMessage.textContent =
+    "It might take several seconds, please wait🤔...";
   messageContainer.appendChild(assistantMessage);
 
   messageContainer.scrollTo({
