@@ -3,8 +3,8 @@ const sendButton = document.getElementById("send-button1");
 const messageContainer = document.querySelector("message-container");
 
 const sendButtonClickHandler = () => {
-  const apiUrl = process.env.API_URL;
-  const apiKey = process.env.API_KEY; // Replace with your actual API key
+  const apiUrl = API_URL;
+  const apiKey = API_KEY; // Replace with your actual API key
   const messageContainer = document.getElementById("message-container");
 
   // Add user's message to the container
