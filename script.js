@@ -26,7 +26,7 @@ const sendButtonClickHandler = () => {
   });
 
   const data = {
-    question: inputField.value,
+    prompt: inputField.value,
   };
 
   fetch(apiUrl, {
