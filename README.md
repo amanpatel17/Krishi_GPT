@@ -4,6 +4,14 @@
 
 Krishi-GPT is a cutting-edge precision farming chatbot designed to empower farmers with real-time, field-specific insights. Using IoT sensors, our device Dhara gathers critical data from the field, which is then analyzed by Krishi-GPT to provide personalized, actionable recommendations. This helps farmers optimize crop yields, improve sustainability, and manage resources more efficiently.
 
+## 🌐 Web-page URL
+
+[https://krishigpt.vercel.app](https://krishigpt.vercel.app/)
+
+## 🎥 Demo Video
+
+[Watch the Demo Video](https://drive.google.com/file/d/1UDxvDJSjB-Nxc3vkCHBathO35pnfw7KC/view)
+
 ## 🚀 Features
 
 - **Real-Time, Field-Specific Insights:** Provides actionable recommendations based on live data from IoT sensors.
@@ -24,7 +32,3 @@ Krishi-GPT is a cutting-edge precision farming chatbot designed to empower farme
   <img src="./assets/screenshot1.png" alt="Screenshot 1" width="90%">
   <img src="./assets/screenshot2.png" alt="Screenshot 2" width="90%">
 </div>
-
-## 🎥 Demo Video
-
-[Watch the Demo Video](https://www.lastpass.com/features/password-generator)
