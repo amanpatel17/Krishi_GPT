@@ -112,3 +112,17 @@ const observer = new MutationObserver(handleDOMChanges);
 
 // Start observing the document body for child node additions
 observer.observe(document.body, { childList: true, subtree: true });
+
+const toggleButton = document.getElementById("sidebar-toggle");
+const sidebar = document.getElementsByClassName("sidebar");
+
+toggleButton.addEventListener("click", function (e) {
+
+  if (sidebar[0].classList.contains("sidebar-hidden")) {
+    sidebar[0].classList.remove("sidebar-hidden");
+    sidebar[0].classList.add("sidebar-visible");
+  } else {
+    sidebar[0].classList.remove("sidebar-visible");
+    sidebar[0].classList.add("sidebar-hidden");
+  }
+});

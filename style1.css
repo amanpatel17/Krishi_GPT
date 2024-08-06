@@ -8,7 +8,12 @@ html {
   margin: 0;
   padding: 0;
   font-family: helvetica;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(25, 39, 39);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 img {
@@ -18,7 +23,8 @@ img {
 .container {
   display: flex;
   position: relative;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   scrollbar-width: none;
   background-color: #10a37f;
 }
@@ -34,17 +40,26 @@ img {
   padding: 20px;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  top: 0px;
+  left: 0px;
 }
 
-.logo {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
+/* .logo {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  } */
 
 #Logo1 {
   height: 7vw;
   width: 25vw;
+}
+@media (max-width: 767px) {
+  #Logo1 {
+    height: 15vw;
+    width: auto;
+  }
 }
 
 #Logo2 {
@@ -86,13 +101,17 @@ nav ul li {
 }
 
 main {
-  flex-grow: 1;
+  /* flex-grow: 1; */
   background-color: rgb(25, 39, 39);
   /* background: url(https://sentione.com/wp-content/uploads/2023/06/WHAT-IS-chatbot.jpg);height: auto; */
   display: flex;
   flex-direction: column;
+  align-items: center;
+    background: #000;
   justify-content: space-between;
   padding: 20px;
+  width: 100%;
+  margin-left: 260px;
 }
 
 .main-content {
@@ -101,7 +120,12 @@ main {
   align-items: center;
   justify-content: center;
   height: 100%;
+  background: #10a37f;
   scrollbar-width: none;
+}
+@media (max-width: 767px) {
+  .main-content {
+  }
 }
 .main-content::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Edge */
@@ -122,8 +146,8 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  max-width: 600px;
-  margin-top: 15vh;
+  max-width: 450px;
+  margin-top: 10vh;
 }
 
 .suggestion-item {
@@ -149,7 +173,7 @@ main {
 .input-container {
   display: flex;
   margin-top: 20px;
-  position: absolute;
+  /* position: absolute; */
   bottom: 5vh;
   width: 40vw;
 }
@@ -173,7 +197,7 @@ input[type="text"] {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .container {
     flex-direction: column;
   }
@@ -186,7 +210,8 @@ input[type="text"] {
   .suggestion-grid {
     grid-template-columns: 1fr;
   }
-}
+} */
+
 /* Add hover effects */
 nav ul li:not(.section-title):hover,
 .suggestion-item:hover,
@@ -257,12 +282,12 @@ input[type="text"]:focus {
 /* Add this for better mobile responsiveness */
 @media (max-width: 768px) {
   .profile {
-    top: 10vw;
-    right: 10vw;
+    top: 3vw;
+    right: 0vw;
   }
 
   main {
-    padding-top: 50px;
+    padding-top: 5 px;
   }
 
   .suggestion-grid {
@@ -287,7 +312,7 @@ input[type="text"]:focus {
   display: none;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   #sidebar-toggle {
     display: block;
   }
@@ -308,9 +333,9 @@ input[type="text"]:focus {
   main {
     padding-left: 20px;
   }
-}
+} */
 
-@media (min-width: 769px) {
+/* @media (min-width: 769px) {
   .container {
     position: relative;
   }
@@ -324,12 +349,47 @@ input[type="text"]:focus {
 
   .sidebar {
     transition: width 0.3s ease, min-width 0.3s ease;
-  }
+  } */
 
-  .sidebar.closed {
+/* .sidebar.closed {
     width: 0;
     min-width: 0;
     overflow: hidden;
+  }
+} */
+
+@media (max-width: 767px) {
+  #sidebar-toggle {
+    display: inline;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 10px;
+  }
+
+  .sidebar {
+    width: 100vw;
+    height: 100vh;
+    /* padding: 0px; */
+  }
+
+  main {
+    margin-left: 0px;
+  }
+
+  .sidebar-hidden {
+    width: 0vw;
+    padding: 0px;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+  }
+
+  .sidebar-visible {
+    width: 100vw;
+    padding: 20px;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
   }
 }
 
