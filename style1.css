@@ -24,9 +24,8 @@ img {
   display: flex;
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   scrollbar-width: none;
-  background-color: #10a37f;
 }
 
 .container::-webkit-scrollbar {
@@ -35,9 +34,10 @@ img {
 
 .sidebar {
   width: 260px;
+  height: 92vh;
   background-color: #091d1d;
   color: white;
-  padding: 20px;
+  padding: 4vh;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -107,7 +107,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-    background: #000;
+  /* background: #000; */
   justify-content: space-between;
   padding: 20px;
   width: 100%;
@@ -120,13 +120,9 @@ main {
   align-items: center;
   justify-content: center;
   height: 100%;
-  background: #10a37f;
   scrollbar-width: none;
 }
-@media (max-width: 767px) {
-  .main-content {
-  }
-}
+
 .main-content::-webkit-scrollbar {
   display: none; /* For Chrome, Safari, and Edge */
 }
@@ -138,7 +134,7 @@ main {
 .main-logo {
   width: 60px;
   height: 60px;
-  background-color: #10a37f;
+  /* background-color: #10a37f; */
   border-radius: 50%;
 }
 
@@ -173,7 +169,7 @@ main {
 .input-container {
   display: flex;
   margin-top: 20px;
-  /* position: absolute; */
+  position: absolute;
   bottom: 5vh;
   width: 40vw;
 }
@@ -234,7 +230,7 @@ nav ul li:not(.section-title):hover,
 .profile {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 40px;
 }
 
 .profile-img {
@@ -246,13 +242,13 @@ nav ul li:not(.section-title):hover,
 
 /* Modify main padding to accommodate profile */
 main {
-  padding: 60px 20px 20px;
+  padding: 10px 20px 20px;
   position: relative;
 }
 
 /* Add this to the existing .sidebar style */
 .sidebar {
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 /* Modify existing styles for better hover effects */
@@ -265,7 +261,6 @@ nav ul li:not(.section-title) {
   border-radius: 5px;
   transition: background-color 0.3s ease;
 }
-
 .upgrade-plan {
   padding: 10px;
   border-radius: 5px;
@@ -282,8 +277,8 @@ input[type="text"]:focus {
 /* Add this for better mobile responsiveness */
 @media (max-width: 768px) {
   .profile {
-    top: 3vw;
-    right: 0vw;
+    top: 20px;
+    right: 20px;
   }
 
   main {
@@ -296,11 +291,7 @@ input[type="text"]:focus {
 }
 
 #sidebar-toggle {
-  position: fixed;
-
-  top: 10px;
-  left: 0px;
-  /* margin-right: 1px; */
+  position: absolute;
   z-index: 1000;
   background-color: #202123;
   color: white;
@@ -364,14 +355,14 @@ input[type="text"]:focus {
     padding: 10px;
     cursor: pointer;
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 10px;
+    left: 10px;
     z-index: 10px;
   }
 
   .sidebar {
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     /* padding: 0px; */
   }
 
@@ -389,7 +380,12 @@ input[type="text"]:focus {
   .sidebar-visible {
     width: 100vw;
     padding: 20px;
+    overflow: hidden;
     transition: opacity 0.5s ease, max-height 0.5s ease;
+  }
+
+  .input-container {
+    width: 85%;
   }
 }
 
