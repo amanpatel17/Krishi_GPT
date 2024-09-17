@@ -2,6 +2,59 @@ const inputField = document.getElementById("user-input");
 const sendButton = document.getElementById("send-button1");
 const messageContainer = document.querySelector("message-container");
 
+
+var firebaseConfig = {
+  apiKey: "AIzaSyCtJf_3Hi-sEx6PZRKCETvhVmJ4fhLXmq0",
+  authDomain: "esp8266-d162f.firebaseapp.com",
+  databaseURL: "https://esp8266-d162f-default-rtdb.firebaseio.com",
+  projectId: "esp8266-d162f",
+  storageBucket: "esp8266-d162f.appspot.com",
+  messagingSenderId: "690943835271",
+  appId: "1:690943835271:web:59eac080b50e17e21bcc22"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Reference to Firebase Realtime Database
+var database = firebase.database();
+
+// Function to get and display data from Firebase
+function getData() {
+// Reference paths in Firebase
+var temperatureRef = database.ref('sensor/dht11/temperature');
+var humidityRef = database.ref('sensor/dht11/humidity');
+var soilMoistureRef = database.ref('sensor/soilMoisture/percentage');
+
+// Fetch temperature data
+temperatureRef.on('value', (snapshot) => {
+  const temp = snapshot.val();
+  document.getElementById('temperature').innerText = temp;
+});
+
+// Fetch humidity data
+humidityRef.on('value', (snapshot) => {
+  const humidity = snapshot.val();
+  document.getElementById('humidity').innerText = humidity;
+ 
+});
+
+
+// Fetch soil moisture data
+soilMoistureRef.on('value', (snapshot) => {
+  const soilMoisture = snapshot.val();
+  document.getElementById('soilMoisture').innerText = soilMoisture;
+ 
+});
+}
+
+// Call the function to get data from Firebase
+getData();
+
+
+
+
+
 const sendButtonClickHandler = () => {
   const apiUrl = API_URL;
   const apiKey = API_KEY; // Replace with your actual API key
