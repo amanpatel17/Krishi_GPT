@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KrishiGPT</title>
-    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="icon"
       type="image/xcrashicon"
@@ -64,7 +64,14 @@
 
       <aside class="sidebar sidebar-hidden">
         <img id="Logo2" src="./assets/KrishiGPT logo 2.png" alt="Logo2" />
+        <h1>Sensor Data Dashboard</h1>
+  
+  
+        <p>Temperature: <span id="temperature">Loading...</span> °C</p>
+        <p>Humidity: <span id="humidity">Loading...</span> %</p>
 
+        <p>Soil Moisture: <span id="soilMoisture">Loading...</span> %</p>
+      
         <nav>
           <ul>
             <!-- <li>Explore GPTs</li> -->
@@ -73,6 +80,7 @@
             <li class="section-title">Yesterday</li>
             <li>How can I increase wheat yield?</li>
             <li class="section-title">Previous 7 Days</li>
+
             <li>
               What are the common pests for cotton and how to control them?
             </li>
@@ -87,7 +95,10 @@
         </div>
       </aside>
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
     <script src="config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+  
   </body>
 </html>
