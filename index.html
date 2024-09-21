@@ -34,6 +34,7 @@
           </div>
 
           <div class="suggestion-grid" id="suggestion-grid">
+           
             <div class="suggestion-item">
               <span class="icon">🌱</span>
               <p>Tips for Improving Soil Health</p>
@@ -64,13 +65,21 @@
 
       <aside class="sidebar sidebar-hidden">
         <img id="Logo2" src="./assets/KrishiGPT logo 2.png" alt="Logo2" />
-        <h1>Sensor Data Dashboard</h1>
-  
-  
+        <h2>Real-time Sensor Data</h2>
+    <div id="sensorData">
         <p>Temperature: <span id="temperature">Loading...</span> °C</p>
         <p>Humidity: <span id="humidity">Loading...</span> %</p>
-
         <p>Soil Moisture: <span id="soilMoisture">Loading...</span> %</p>
+    </div>
+    
+    <div class="controls">
+          
+      <button id="ledOn">Turn ON Pump</button>
+      <button id="ledOff">Turn OFF Pump</button>
+      <p id="ledStatus" >Pump Status: <span id="ledStatusText">Loading...</span></p>
+  </div>  
+   
+
       
         <nav>
           <ul>
