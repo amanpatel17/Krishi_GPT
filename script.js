@@ -3,7 +3,10 @@ const sendButton = document.getElementById("send-button1");
 const messageContainer = document.querySelector("message-container");
 
 
-var firebaseConfig = {
+
+
+//firebase 
+const firebaseConfig = {
   apiKey: "AIzaSyCtJf_3Hi-sEx6PZRKCETvhVmJ4fhLXmq0",
   authDomain: "esp8266-d162f.firebaseapp.com",
   databaseURL: "https://esp8266-d162f-default-rtdb.firebaseio.com",
@@ -13,43 +16,47 @@ var firebaseConfig = {
   appId: "1:690943835271:web:59eac080b50e17e21bcc22"
 };
 
+
+
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
 
-// Reference to Firebase Realtime Database
-var database = firebase.database();
+// Function to fetch sensor data
+function fetchSensorData() {
+const dataRef = database.ref('sensor/data');
 
-// Function to get and display data from Firebase
-function getData() {
-// Reference paths in Firebase
-var temperatureRef = database.ref('sensor/dht11/temperature');
-var humidityRef = database.ref('sensor/dht11/humidity');
-var soilMoistureRef = database.ref('sensor/soilMoisture/percentage');
-
-// Fetch temperature data
-temperatureRef.on('value', (snapshot) => {
-  const temp = snapshot.val();
-  document.getElementById('temperature').innerText = temp;
-});
-
-// Fetch humidity data
-humidityRef.on('value', (snapshot) => {
-  const humidity = snapshot.val();
-  document.getElementById('humidity').innerText = humidity;
- 
-});
-
-
-// Fetch soil moisture data
-soilMoistureRef.on('value', (snapshot) => {
-  const soilMoisture = snapshot.val();
-  document.getElementById('soilMoisture').innerText = soilMoisture;
- 
+dataRef.on('child_added', (snapshot) => {
+  const data = snapshot.val();
+  document.getElementById('temperature').innerText = data.temperature;
+  document.getElementById('humidity').innerText = data.humidity;
+  document.getElementById('soilMoisture').innerText = data.soilMoisture;
 });
 }
 
-// Call the function to get data from Firebase
-getData();
+// Function to update LED status
+function updateLEDStatus() {
+const ledRef = database.ref('control/LED');
+
+ledRef.on('value', (snapshot) => {
+  const ledState = snapshot.val();
+  document.getElementById('ledStatusText').innerText = ledState ? 'ON' : 'OFF';
+});
+}
+
+// Function to turn on LED
+document.getElementById('ledOn').onclick = function() {
+database.ref('control/LED').set(true);
+};
+
+// Function to turn off LED
+document.getElementById('ledOff').onclick = function() {
+database.ref('control/LED').set(false);
+};
+
+// Call functions
+fetchSensorData();
+updateLEDStatus();
 
 
 
