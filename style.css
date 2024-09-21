@@ -440,7 +440,9 @@ input[type="text"]:focus {
 }
 
 
-#ledOn  {
+
+
+#ledon  {
   /* display: block; */
   /* width  : 100%; */
   padding: 10px;
@@ -451,7 +453,7 @@ input[type="text"]:focus {
   border-radius: 5px;
   cursor: pointer;
 }
- #ledOff {
+ #ledoff {
   /* display: block; */
   /* width: 100%; */
   padding: 10px;
