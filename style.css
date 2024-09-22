@@ -464,3 +464,31 @@ input[type="text"]:focus {
   border-radius: 5px;
   cursor: pointer;
 }
+
+
+
+
+
+#ledOn  {
+  /* display: block; */
+  /* width  : 100%; */
+  padding: 10px;
+  margin: 10px 0;
+  background: #02af1c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+ #ledOff {
+  /* display: block; */
+  /* width: 100%; */
+  padding: 10px;
+  margin: 10px 0;
+  background: #ff1100;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
