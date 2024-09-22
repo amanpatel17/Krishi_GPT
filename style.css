@@ -442,7 +442,7 @@ input[type="text"]:focus {
 
 
 
-#ledon  {
+.ledon  {
   /* display: block; */
   /* width  : 100%; */
   padding: 10px;
@@ -453,7 +453,7 @@ input[type="text"]:focus {
   border-radius: 5px;
   cursor: pointer;
 }
- #ledoff {
+ .ledoff {
   /* display: block; */
   /* width: 100%; */
   padding: 10px;
